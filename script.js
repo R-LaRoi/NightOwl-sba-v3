@@ -5,7 +5,6 @@
 document.getElementById("start-btn").addEventListener("click", (e) => {
   e.preventDefault("");
   let userName = prompt("what is you name?").toUpperCase();
-  console.log(userName);
 
   // create element <h1>
   let greeting = (document.createElement(
@@ -14,13 +13,13 @@ document.getElementById("start-btn").addEventListener("click", (e) => {
   console.log(greeting);
 
   // select using querySelector
+  //  display new text inside of h3
   let subText = document.querySelector("h3");
   subText.innerHTML = greeting;
 
   let readBtn = document.querySelector("button");
-
   readBtn.textContent = "Let's read a book!";
-  console.log(readBtn);
+  readBtn.disabled = true;
 });
 
 // Use the DocumentFragment interface or HTML templating with the cloneNode method to create templated content.
