@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero-vid {
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  font-size: 4rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sm-title {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+}
+.header-text {
+  font-size: 8rem;
+  animation: slide-up-fade 3s forwards;
+  position: relative;
+  bottom: 550px;
+  color: #ffffffe3;
+  text-align: center;
+  line-height: 20px;
+  font-weight: 800;
+  z-index: 99;
+  padding: 2rem;
+}
+.header-subtext {
+  margin-top: 0.6rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.start-btn {
+  height: 30px;
+  width: 160px;
+  font-size: 1rem;
+  background-color: rgb(225, 53, 228);
+  color: white;
+  border: none;
+}
