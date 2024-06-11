@@ -6,6 +6,12 @@ let navData = [
   { id: 3, title: "Book List" },
 ];
 
+let bookData = [
+  { id: 1, title: "Night Animals", month: "June" },
+  { id: 3, title: "Good Night Moon", month: "May" },
+  { id: 3, title: "Knight Owl", month: "April" },
+];
+
 console.log(navData);
 
 let userData = [];
@@ -18,11 +24,11 @@ document.getElementById("start-btn").addEventListener("click", (e) => {
   e.preventDefault("");
   let userName = prompt("What is your name?").toUpperCase();
   userData.push({ userName });
-
+  bookData.push({ userName });
   // create element <h1>
   let greeting = (document.createElement(
     "div"
-  ).innerHTML = `<h1>Welcome ${userName}!</h1><p>
+  ).innerHTML = `<h1 class="h1-message">Welcome ${userName}!</h1><p>
 Let's check out some new books!
   </p>
 `);
@@ -78,8 +84,7 @@ showNextScreen.addEventListener("click", (e) => {
 
 // ---- review btn
 
-//  if button is clicked show a form
-
+// review button will show a form
 document.getElementById("review-btn").addEventListener("click", (e) => {
   e.preventDefault();
   userData.map((element) => {
@@ -101,27 +106,54 @@ document.getElementById("review-btn").addEventListener("click", (e) => {
                         <textarea id="textarea4" rows="4" class="form-control"></textarea>
                         
                     </div>
-                    <!-- Submit button -->
                 </form>
   `;
   });
 
   document.getElementById("sb-thanks").style.display = "block";
 
+  // show thank you message when form submitted
   document.getElementById("sb-thanks").addEventListener("click", (e) => {
     e.preventDefault();
     userData.map((item) => {
       item.userName;
       document.getElementById("sb-thanks").style.display = "none";
       document.getElementById("review-form").innerHTML = `
-       <h2> Thank you ${item.userName} for your review!</h2> 
+       <h2 class="h2-message"> Thank you ${item.userName} for your review!</h2> 
+      
   `;
     });
   });
 });
 
-// document.getElementById("add-bk-btn").addEventListener("click", (e) => {
-//   e.preventDefault("");
+document.getElementById("add-bk-btn").addEventListener("click", (e) => {
+  document.getElementById("review-form").remove();
+  document.getElementById("--img").src = "three.png";
 
-//   console.log("show book list");
-// });
+  e.preventDefault("");
+  console.log(bookData);
+
+  //  navData.map((link) => {
+  //    // 2. create and interate over nav links
+  //    let ulink = document.createElement("li");
+  //    ulink.innerHTML = `${link.title}`;
+  //    console.log(ulink);
+
+  //    // 5. append element
+  //    navBar.append(ulink);
+  //  });
+
+  let ulList = document.getElementById("bk-ul");
+
+  bookData.map((element) => {
+    element.userName;
+    let bktitle = document.createElement("li");
+    bktitle.classList.add("li-list");
+    bktitle.innerHTML = `</span> ${element.title}`;
+    ulList.appendChild(bktitle);
+    document.getElementById("book-list").innerHTML = `
+  <h2> ${element.userName}'S BOOK LIST!</h2>
+
+  `;
+  });
+});

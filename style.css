@@ -27,6 +27,10 @@ body {
   flex-direction: column;
 }
 
+.h1-message {
+  font-weight: 800;
+  font-size: 3rem;
+}
 .sm-title {
   text-transform: uppercase;
   font-size: 0.7rem;
@@ -102,7 +106,7 @@ li {
 
 #sb-thanks {
   position: relative;
-  background-color: rgb(225, 208, 47);
+  background-color: rgb(251, 231, 56);
   border-radius: 10px;
   border: none;
   color: black;
@@ -110,7 +114,28 @@ li {
   padding: 10px;
 }
 
+h2 {
+  color: rgb(225, 208, 47);
+}
 .move-btn {
   position: relative;
-  margin-left: 100%;
+}
+
+.li-list {
+  padding: 10px;
+  background: black;
+  border-radius: 10px;
+}
+
+.sp {
+  margin-right: 10px;
+}
+
+.h2-message {
+  font-size: 3rem;
+  margin-top: 20%;
+  padding: 10%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
 }
