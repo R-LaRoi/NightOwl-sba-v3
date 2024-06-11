@@ -74,7 +74,8 @@ showNextScreen.addEventListener("click", (e) => {
   navData.map((link) => {
     // 2. create and interate over nav links
     let ulink = document.createElement("li");
-    ulink.innerHTML = `${link.title}`;
+
+    ulink.innerHTML = `<a href="/">${link.title}</a>`;
     console.log(ulink);
 
     // 5. append element
@@ -94,8 +95,7 @@ document.getElementById("review-btn").addEventListener("click", (e) => {
     
        <h2> Hi ${element.userName}!</h2> 
        <p>Share your thoughts about the book with us!</p>
-
-       <form>  
+       <form id = "form-sb">  
                     <div data-mdb-input-init class="form-outline mb-4">
                     <label class="form-label" for="Email:">Email:</label>
                         <input type="email" id="email4" class="form-control"
@@ -107,6 +107,9 @@ document.getElementById("review-btn").addEventListener("click", (e) => {
                     required><label class="form-label" for="textarea4">Your review:</label>
                         <textarea id="textarea4" rows="4" class="form-control"></textarea>
                     </div>
+                       <div class="move-btn">
+      <button id="sb-thanks">Submit Review</button>
+   </div>
                 </form>
   `;
   });
@@ -114,7 +117,7 @@ document.getElementById("review-btn").addEventListener("click", (e) => {
   document.getElementById("sb-thanks").style.display = "block";
 
   // show thank you message when form submitted
-  document.getElementById("sb-thanks").addEventListener("click", (e) => {
+  document.getElementById("form-sb").addEventListener("submit", (e) => {
     e.preventDefault();
     userData.map((item) => {
       item.userName;
@@ -143,7 +146,8 @@ document.getElementById("add-bk-btn").addEventListener("click", (e) => {
       element.userName;
       let bktitle = document.createElement("li");
       bktitle.classList.add("li-list");
-      bktitle.innerHTML = `</span> ${element.title}`;
+      bktitle.innerHTML = ` ${element.title}
+       `;
       ulList.appendChild(bktitle);
 
       userData.map((element) => {
@@ -152,16 +156,13 @@ document.getElementById("add-bk-btn").addEventListener("click", (e) => {
   <h2> ${element.userName}'S BOOK LIST!</h2>
 
   <input type="text" id="add-book"  placeholder="add" >
-  
 
   `;
       });
 
-      let addedBK = document.getElementById("add-book");
-
-      addedBK.addEventListener("click", () => {
+      document.getElementById("add-book").addEventListener("change", (e) => {
         e.preventDefault();
-        let bkValue = addedBK.value;
+        let bkValue = e.target.value;
         let showBook = document.createElement("li");
         showBook.classList.add("li-list");
         showBook.textContent = bkValue;

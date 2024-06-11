@@ -10,6 +10,12 @@ body {
   object-fit: cover;
 }
 
+li a {
+  color: rgb(255, 238, 144);
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
 .arrow-gif {
   width: 300px;
 }
@@ -76,6 +82,8 @@ li {
   display: flex;
   margin-top: 20px;
   margin-left: 20px;
+  text-decoration: none;
+  z-index: 99;
 }
 
 .screen-card-container {
@@ -107,7 +115,7 @@ li {
   width: 150px;
   padding: 10px;
   display: flex;
-  margin-left: 100%;
+  /* margin-left: 100%; */
 }
 
 h2 {
@@ -115,12 +123,6 @@ h2 {
 }
 .move-btn {
   position: relative;
-}
-
-.li-list {
-  padding: 10px;
-  background: black;
-  border-radius: 10px;
 }
 
 .h2-message {
@@ -168,4 +170,27 @@ textarea {
 #review-btn {
   border: none;
   background-color: rgb(74, 26, 74);
+}
+
+@media only screen and (max-width: 590px) {
+  .card-screen {
+    text-align: center;
+    margin-top: 40%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 35px;
+    border: 1px solid rgba(81, 81, 81, 0.25);
+    border-radius: 20px;
+    background-color: rgba(15, 14, 14, 0.806);
+  }
+
+  .hero-vid {
+    width: 100%;
+    height: 120vh;
+    z-index: 10;
+    object-fit: cover;
+  }
 }
