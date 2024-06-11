@@ -128,6 +128,7 @@ document.getElementById("review-btn").addEventListener("click", (e) => {
   });
 });
 
+// book list ------
 document.getElementById("add-bk-btn").addEventListener("click", (e) => {
   document.getElementById("review-form").remove();
   document.getElementById("--img").src = "three.png";
@@ -144,12 +145,27 @@ document.getElementById("add-bk-btn").addEventListener("click", (e) => {
       bktitle.classList.add("li-list");
       bktitle.innerHTML = `</span> ${element.title}`;
       ulList.appendChild(bktitle);
+
       userData.map((element) => {
         element.userName;
         document.getElementById("book-list").innerHTML = `
   <h2> ${element.userName}'S BOOK LIST!</h2>
 
+  <input type="text" id="add-book"  placeholder="add" >
+  
+
   `;
+      });
+
+      let addedBK = document.getElementById("add-book");
+
+      addedBK.addEventListener("click", () => {
+        e.preventDefault();
+        let bkValue = addedBK.value;
+        let showBook = document.createElement("li");
+        showBook.classList.add("li-list");
+        showBook.textContent = bkValue;
+        ulList.appendChild(showBook);
       });
     }
   });

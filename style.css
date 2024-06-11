@@ -79,7 +79,6 @@ li {
 }
 
 .screen-card-container {
-  /* height: 300px; */
   font-size: 1rem;
   padding: 20px;
 }
@@ -89,15 +88,11 @@ li {
   grid-template-columns: 0.5fr 1fr;
   justify-content: space-between;
   width: 800px;
-  height: 500px;
+  height: 550px;
   padding: 35px;
   border: 1px solid rgba(81, 81, 81, 0.25);
   border-radius: 20px;
   background-color: rgba(15, 14, 14, 0.806);
-}
-
-.placholder {
-  width: 100px;
 }
 
 .read-btn {
@@ -105,13 +100,14 @@ li {
 }
 
 #sb-thanks {
-  position: relative;
   background-color: rgb(251, 231, 56);
   border-radius: 10px;
   border: none;
   color: black;
   width: 150px;
   padding: 10px;
+  display: flex;
+  margin-left: 100%;
 }
 
 h2 {
@@ -125,10 +121,6 @@ h2 {
   padding: 10px;
   background: black;
   border-radius: 10px;
-}
-
-.sp {
-  margin-right: 10px;
 }
 
 .h2-message {
@@ -151,8 +143,29 @@ h2 {
   margin-left: 30%;
   font-weight: 800;
 }
+#review-btn:hover,
+#add-bk-btn:hover,
 #home-btn:hover,
 .read-btn:hover,
 .start-btn:hover {
   background-color: #1d5666;
+}
+
+.hide-input {
+  display: none;
+}
+
+input,
+textarea {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+#add-bk-btn,
+#review-btn {
+  border: none;
+  background-color: rgb(74, 26, 74);
 }
