@@ -92,19 +92,20 @@ document.getElementById("review-btn").addEventListener("click", (e) => {
 
     document.getElementById("review-form").innerHTML = `
     
-       <h2> Hi ${element.userName}!</h2> <p>Share your thoughts about the book with us!</p>
-       <form>  <!-- Email input -->
+       <h2> Hi ${element.userName}!</h2> 
+       <p>Share your thoughts about the book with us!</p>
+
+       <form>  
                     <div data-mdb-input-init class="form-outline mb-4">
                     <label class="form-label" for="Email:">Email:</label>
                         <input type="email" id="email4" class="form-control"
-                        placholder="email" />
+                        placholder="email" 
+                        required/>
                         
                     </div>
-
-                    <!-- textarea input -->
-                    <div data-mdb-input-init class="form-outline mb-4"><label class="form-label" for="textarea4">Your review:</label>
+                    <div data-mdb-input-init class="form-outline mb-4"
+                    required><label class="form-label" for="textarea4">Your review:</label>
                         <textarea id="textarea4" rows="4" class="form-control"></textarea>
-                        
                     </div>
                 </form>
   `;
@@ -120,7 +121,8 @@ document.getElementById("review-btn").addEventListener("click", (e) => {
       document.getElementById("sb-thanks").style.display = "none";
       document.getElementById("review-form").innerHTML = `
        <h2 class="h2-message"> Thank you ${item.userName} for your review!</h2> 
-      
+      <a href="/">
+      <button id="home-btn">Home</button></a>
   `;
     });
   });
@@ -133,27 +135,22 @@ document.getElementById("add-bk-btn").addEventListener("click", (e) => {
   e.preventDefault("");
   console.log(bookData);
 
-  //  navData.map((link) => {
-  //    // 2. create and interate over nav links
-  //    let ulink = document.createElement("li");
-  //    ulink.innerHTML = `${link.title}`;
-  //    console.log(ulink);
-
-  //    // 5. append element
-  //    navBar.append(ulink);
-  //  });
-
   let ulList = document.getElementById("bk-ul");
 
-  bookData.map((element) => {
-    element.userName;
-    let bktitle = document.createElement("li");
-    bktitle.classList.add("li-list");
-    bktitle.innerHTML = `</span> ${element.title}`;
-    ulList.appendChild(bktitle);
-    document.getElementById("book-list").innerHTML = `
+  bookData.map((element, index) => {
+    if (index < 3) {
+      element.userName;
+      let bktitle = document.createElement("li");
+      bktitle.classList.add("li-list");
+      bktitle.innerHTML = `</span> ${element.title}`;
+      ulList.appendChild(bktitle);
+      userData.map((element) => {
+        element.userName;
+        document.getElementById("book-list").innerHTML = `
   <h2> ${element.userName}'S BOOK LIST!</h2>
 
   `;
+      });
+    }
   });
 });
