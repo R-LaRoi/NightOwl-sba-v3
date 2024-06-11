@@ -73,14 +73,27 @@ showNextScreen.addEventListener("click", (e) => {
   });
 });
 
-// Use the DocumentFragment interface or HTML templating with the cloneNode method to create templated content.
+// ---- review btn
 
-// // Use appendChild and/or prepend to add new elements to the DOM.
+//  if button is clicked show a form
 
-// selector or selector All
+document.getElementById("review-btn").addEventListener("click", (e) => {
+  e.preventDefault("");
+  document.getElementById(
+    "review-form"
+  ).innerHTML = `<div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput">Email address</label>
+</div>
+  <div class="form-floating">
+  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+  <label for="floatingTextarea2">Comments</label>
+</div>
+  `;
+});
 
-// Create at least one element using createElement.
+document.getElementById("add-bk-btn").addEventListener("click", (e) => {
+  e.preventDefault("");
 
-// Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent.
-
-// Use the parent-child-sibling relationship to navigate between elements at least once (firstChild, lastChild, parentNode, nextElementSibling, etc.).
+  console.log("show book list");
+});

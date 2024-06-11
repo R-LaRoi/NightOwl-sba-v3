@@ -73,3 +73,29 @@ li {
   margin-top: 20px;
   margin-left: 20px;
 }
+
+.screen-card-container {
+  /* height: 300px; */
+  font-size: 1rem;
+  padding: 20px;
+}
+
+.card-screen {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  justify-content: space-between;
+  width: 800px;
+  height: 500px;
+  padding: 35px;
+  border: 1px solid rgba(81, 81, 81, 0.25);
+  border-radius: 20px;
+  background-color: rgba(15, 14, 14, 0.806);
+}
+
+.placholder {
+  width: 100px;
+}
+
+.read-btn {
+  background: rgb(74, 26, 74);
+}
