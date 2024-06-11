@@ -8,12 +8,16 @@ let navData = [
 
 console.log(navData);
 
+let userData = [];
+
 // selectElementbyID
 document.getElementById("section-two").style.display = "none";
+document.getElementById("sb-thanks").style.display = "none";
 
 document.getElementById("start-btn").addEventListener("click", (e) => {
   e.preventDefault("");
   let userName = prompt("What is your name?").toUpperCase();
+  userData.push({ userName });
 
   // create element <h1>
   let greeting = (document.createElement(
@@ -23,7 +27,7 @@ Let's check out some new books!
   </p>
 `);
   console.log(greeting);
-
+  console.log(userData);
   // select using querySelector
   //  display new text inside of h3
   let subText = document.querySelector("h3");
@@ -62,8 +66,7 @@ showNextScreen.addEventListener("click", (e) => {
   navBar.style.gap = "20px";
 
   navData.map((link) => {
-    // 2. create an a element
-    // 3. add href
+    // 2. create and interate over nav links
     let ulink = document.createElement("li");
     ulink.innerHTML = `${link.title}`;
     console.log(ulink);
@@ -78,22 +81,47 @@ showNextScreen.addEventListener("click", (e) => {
 //  if button is clicked show a form
 
 document.getElementById("review-btn").addEventListener("click", (e) => {
-  e.preventDefault("");
-  document.getElementById(
-    "review-form"
-  ).innerHTML = `<div class="form-floating mb-3">
-  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-  <label for="floatingInput">Email address</label>
-</div>
-  <div class="form-floating">
-  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-  <label for="floatingTextarea2">Comments</label>
-</div>
+  e.preventDefault();
+  userData.map((element) => {
+    element.userName;
+
+    document.getElementById("review-form").innerHTML = `
+    
+       <h2> Hi ${element.userName}!</h2> <p>Share your thoughts about the book with us!</p>
+       <form>  <!-- Email input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="Email:">Email:</label>
+                        <input type="email" id="email4" class="form-control"
+                        placholder="email" />
+                        
+                    </div>
+
+                    <!-- textarea input -->
+                    <div data-mdb-input-init class="form-outline mb-4"><label class="form-label" for="textarea4">Your review:</label>
+                        <textarea id="textarea4" rows="4" class="form-control"></textarea>
+                        
+                    </div>
+                    <!-- Submit button -->
+                </form>
   `;
+  });
+
+  document.getElementById("sb-thanks").style.display = "block";
+
+  document.getElementById("sb-thanks").addEventListener("click", (e) => {
+    e.preventDefault();
+    userData.map((item) => {
+      item.userName;
+      document.getElementById("sb-thanks").style.display = "none";
+      document.getElementById("review-form").innerHTML = `
+       <h2> Thank you ${item.userName} for your review!</h2> 
+  `;
+    });
+  });
 });
 
-document.getElementById("add-bk-btn").addEventListener("click", (e) => {
-  e.preventDefault("");
+// document.getElementById("add-bk-btn").addEventListener("click", (e) => {
+//   e.preventDefault("");
 
-  console.log("show book list");
-});
+//   console.log("show book list");
+// });

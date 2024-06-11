@@ -99,3 +99,18 @@ li {
 .read-btn {
   background: rgb(74, 26, 74);
 }
+
+#sb-thanks {
+  position: relative;
+  background-color: rgb(225, 208, 47);
+  border-radius: 10px;
+  border: none;
+  color: black;
+  width: 150px;
+  padding: 10px;
+}
+
+.move-btn {
+  position: relative;
+  margin-left: 100%;
+}
