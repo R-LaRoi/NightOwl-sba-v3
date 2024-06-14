@@ -12,19 +12,19 @@ let bookData = [
   { id: 3, title: "Knight Owl", month: "April" },
 ];
 
-console.log(navData);
-
 let userData = [];
 
 // selectElementbyID
 document.getElementById("section-two").style.display = "none";
 document.getElementById("sb-thanks").style.display = "none";
 
+// click event listener
 document.getElementById("start-btn").addEventListener("click", (e) => {
   e.preventDefault("");
   let userName = prompt("What is your name?").toUpperCase();
   userData.push({ userName });
   bookData.push({ userName });
+
   // create element <h1>
   let greeting = (document.createElement(
     "div"
@@ -32,8 +32,7 @@ document.getElementById("start-btn").addEventListener("click", (e) => {
 Let's check out some new books!
   </p>
 `);
-  console.log(greeting);
-  console.log(userData);
+
   // select using querySelector
   //  display new text inside of h3
   let subText = document.querySelector("h3");
@@ -43,7 +42,6 @@ Let's check out some new books!
   readBtn.style.display = "none";
 
   // append to parent element
-
   let nextArrow = document.createElement("img");
   nextArrow.classList.add("arrow-gif");
   nextArrow.src =
